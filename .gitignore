@@ -44,3 +44,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+#config
+*firebase-config.ts
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
