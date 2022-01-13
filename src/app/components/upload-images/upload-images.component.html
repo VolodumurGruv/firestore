@@ -1,1 +1,17 @@
-<p>upload-images works!</p>
+<form [formGroup]="imageForm" (ngSubmit)="onSubmit()">
+  <input
+    type="file"
+    class="invisible"
+    #uploadImage
+    (change)="imageSelected($event)"
+    formControlName="image"
+  />
+  <button type="button" class="btn btn_upload" (click)="uploadImage.click()">
+    Upload
+  </button>
+  <div class="image">{{ imageName || "An image doesn't upload yet!" }}</div>
+  <div>
+    <button class="btn btn_submit">Submit</button>
+  </div>
+</form>
+<img [src]="path" alt="" />
