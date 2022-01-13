@@ -10,6 +10,7 @@ export class UploadImagesComponent implements OnInit {
   public imageName!: string;
   public path!: string;
   public imageForm = this.fb.group({ image: [''] });
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
@@ -20,7 +21,7 @@ export class UploadImagesComponent implements OnInit {
 
     formData.append('beefamily', file);
     this.imageName = file.name;
-    this.imageForm.setValue(formData);
+    this.imageForm.patchValue(formData);
   }
 
   onSubmit() {
